@@ -4,6 +4,7 @@
 //
 //  Created by Ario Liyan on 16/9/2025.
 //
+
 import XCTest
 import EssentialFeed
 
@@ -113,8 +114,8 @@ class CacheFeedUseCaseTests: XCTestCase {
         let exp = expectation(description: "Wait for save completion")
         
         var receivedError: Error?
-        sut.save(uniqueImageFeed().models) { error in
-            receivedError = error
+        sut.save(uniqueImageFeed().models) { result in
+            if case let Result.failure(error) = result { receivedError = error }
             exp.fulfill()
         }
         
