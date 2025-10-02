@@ -4,6 +4,9 @@
 //
 //  Created by Ario Liyan on 26/9/2025.
 //
+//
+//  Copyright © 2019 Essential Developer. All rights reserved.
+//
 
 import CoreData
 
@@ -20,9 +23,9 @@ public final class CoreDataFeedStore: FeedStore {
         perform { context in
             do {
                 if let cache = try ManagedCache.find(in: context) {
-                    completion(.success(.found(feed: cache.localFeed, timestamp: cache.timestamp)))
+                    completion(.success(CachedFeed(feed: cache.localFeed, timestamp: cache.timestamp)))
                 } else {
-                    completion(.success(.empty))
+                    completion(.success(.none))
                 }
             } catch {
                 completion(.failure(error))
