@@ -5,6 +5,7 @@
 //  Created by Ario Liyan on 13/11/2025.
 //
 
+
 import UIKit
 
 struct FeedImageViewModel {
@@ -37,7 +38,6 @@ extension FeedImageCell {
         descriptionLabel.text = model.description
         descriptionLabel.isHidden = model.description == nil
         
-        feedImageView.image = UIImage(named: model.imageName)
+        fadeIn(UIImage(named: model.imageName))
     }
 }
-
