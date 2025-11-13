@@ -20,7 +20,8 @@ jobs:
       - name: Show Xcode version
         run: xcodebuild -version
 
-      - name: Build and Test
+      # ✅ macOS scheme
+      - name: Build and Test (macOS)
         run: xcodebuild clean build test \
           -project EssentialFeed/EssentialFeed.xcodeproj \
           -scheme "CI_macOS" \
@@ -31,3 +32,14 @@ jobs:
           ONLY_ACTIVE_ARCH=YES \
           -derivedDataPath DerivedData
 
+      # ✅ iOS scheme
+      - name: Build and Test (iOS)
+        run: xcodebuild clean build test \
+          -project EssentialFeed/EssentialFeed.xcodeproj \
+          -scheme "CI_iOS" \
+          -sdk iphonesimulator \
+          -destination "platform=iOS Simulator,OS=latest,name=iPhone 15" \
+          CODE_SIGN_IDENTITY="" \
+          CODE_SIGNING_REQUIRED=NO \
+          ONLY_ACTIVE_ARCH=YES \
+          -derivedDataPath DerivedData-iOS
