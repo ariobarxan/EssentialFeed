@@ -86,6 +86,9 @@
                                                                 <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage"/>
                                                                 <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </buttonConfiguration>
+                                                            <connections>
+                                                                <action selector="retryButtonTapped" destination="le8-79-5Dp" eventType="touchUpInside" id="DBF-ub-RPs"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.8901960784313725" green="0.8901960784313725" blue="0.8901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -126,6 +129,14 @@
                                         <constraint firstItem="JCV-ju-qOc" firstAttribute="top" secondItem="WbP-Ii-lq7" secondAttribute="topMargin" priority="999" constant="6" id="pny-hj-3TO"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="descriptionLabel" destination="34W-6p-bpf" id="IzN-Ow-Qka"/>
+                                    <outlet property="feedImageContainer" destination="11L-B7-RYJ" id="OBy-Q0-nsf"/>
+                                    <outlet property="feedImageRetryButton" destination="LJa-BK-lq2" id="zaV-77-Ps1"/>
+                                    <outlet property="feedImageView" destination="qq3-Qh-AZ1" id="DPa-vN-Xmg"/>
+                                    <outlet property="locationContainer" destination="taF-vl-84F" id="6si-la-5mR"/>
+                                    <outlet property="locationLabel" destination="24t-z6-qfn" id="0y0-tU-dbu"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
